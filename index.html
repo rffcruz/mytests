@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Northline Systems | Customer Support</title>
+<style>
+  :root{--ink:#172c26;--deep:#102d26;--pine:#17483b;--mint:#d7f5aa;--paper:#f6f7f2;--muted:#52645c;--line:#d9e1d8;--white:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.55 system-ui,sans-serif}
+  button,input{font:inherit}
+  button,a{ -webkit-tap-highlight-color:transparent }
+  a{color:inherit}
+  button{cursor:pointer}
+  :focus-visible{outline:3px solid #287c64;outline-offset:3px}
+  .shell{width:min(1120px,calc(100% - 64px));margin-inline:auto}
+  header{background:var(--white);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;min-height:74px;gap:24px}
+  .brand{display:inline-flex;align-items:center;gap:11px;text-decoration:none;font-weight:750;letter-spacing:-.04em;font-size:1.27rem}
+  .mark{width:34px;height:34px;display:inline-grid;place-items:center;background:var(--pine);color:var(--mint);border-radius:9px;font-weight:800;letter-spacing:-.06em;flex:none}
+  .nav-link{color:var(--muted);text-underline-offset:4px;font-size:.94rem}
+  .hero{background:var(--deep);color:white;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-radial-gradient(ellipse at 80% 127%,transparent 0 25px,#90c0a122 26px 27px,transparent 28px 47px),radial-gradient(ellipse at 95% 100%,#2a6952,transparent 69%)}
+  .hero-grid{position:relative;display:grid;grid-template-columns:1fr minmax(320px,405px);gap:clamp(32px,8vw,120px);align-items:center;padding-block:60px 68px}
+  .eyebrow{color:var(--mint);font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;font-weight:750;margin:0 0 18px}
+  h1,h2,p{margin-top:0}
+  h1{font-size:clamp(3.2rem,6.4vw,5.5rem);line-height:.99;letter-spacing:-.075em;margin-bottom:25px;max-width:660px}
+  .intro{color:#d5e5de;font-size:1.13rem;max-width:36ch;margin-bottom:0}
+  .chat{color:var(--ink);background:var(--white);border-radius:19px;box-shadow:0 16px 60px #06191266;overflow:hidden;min-width:0}
+  .chat-head{display:flex;align-items:center;gap:12px;padding:17px 20px;border-bottom:1px solid var(--line)}
+  .chat-head .mark{background:#e5f3e9;color:var(--pine);width:40px;height:40px}
+  .chat-head h2{margin:0;line-height:1.2;font-size:1.03rem;letter-spacing:-.025em}
+  .mode{margin:2px 0 0;color:var(--muted);font-size:.84rem}
+  .messages{height:245px;overflow:auto;display:flex;flex-direction:column;gap:11px;padding:18px 20px;background:#f9faf7}
+  .message{margin:0;max-width:94%;align-self:flex-start;padding:10px 13px;border-radius:4px 13px 13px 13px;background:#e9efe9;font-size:.94rem;white-space:pre-wrap;overflow-wrap:anywhere}
+  .message.mine{align-self:flex-end;background:var(--pine);color:var(--white);border-radius:13px 4px 13px 13px}
+  .choices{display:flex;flex-wrap:wrap;gap:6px}
+  .choice{background:white;border:1px solid #bfcfc3;border-radius:100px;padding:5px 10px;color:var(--pine);font-size:.86rem;font-weight:650}
+  .choice:hover{background:#e5f3e9}
+  form{display:flex;gap:8px;padding:13px 15px;border-top:1px solid var(--line)}
+  input{flex:1;min-width:0;border:1px solid var(--line);border-radius:9px;padding:9px 10px;color:inherit;background:white}
+  .send{border:0;border-radius:9px;background:var(--mint);color:#183522;font-weight:750;padding:8px 13px}
+  .send:hover{background:#c3ea89}
+  button:disabled,input:disabled{opacity:.65;cursor:wait}
+  .topics{padding-block:46px 50px}
+  .topics h2{font-size:clamp(1.7rem,3vw,2.4rem);letter-spacing:-.055em;margin-bottom:20px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .card{text-align:left;background:white;border:1px solid var(--line);padding:20px;border-radius:13px;color:inherit}
+  .card:hover{border-color:#689583;background:#fbfdf9}
+  .card strong{display:block;font-size:1.07rem;margin-bottom:5px}
+  .card span{display:block;color:var(--muted);font-size:.94rem}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:.88rem;padding-block:20px 24px}
+  @media(max-width:740px){.shell{width:calc(100% - 36px)}.hero-grid{grid-template-columns:1fr;padding-block:37px;gap:29px}.cards{grid-template-columns:1fr;gap:9px}.topics{padding-block:30px}h1{max-width:12ch}nav{min-height:62px}.chat{width:100%;max-width:500px}}
+</style>
+</head>
+<body>
+<header>
+  <nav class="shell" aria-label="Main navigation">
+    <a class="brand" href="#main"><span class="mark" aria-hidden="true">N</span>Northline Systems</a>
+    <a class="nav-link" href="#topics">Support topics</a>
+  </nav>
+</header>
+<main id="main">
+  <section class="hero" aria-labelledby="title">
+    <div class="shell hero-grid">
+      <div>
+        <p class="eyebrow">Customer support</p>
+        <h1 id="title">Let’s get you back on track.</h1>
+        <p class="intro">Get help with your Northline workspace, from signing in and managing your plan to troubleshooting an integration.</p>
+      </div>
+      <section class="chat" aria-labelledby="chat-title">
+        <div class="chat-head">
+          <span class="mark" aria-hidden="true">N</span>
+          <div><h2 id="chat-title">Northline Support</h2><p class="mode" id="mode">Demo assistant</p></div>
+        </div>
+        <div class="messages" id="messages" role="log" aria-label="Support conversation" tabindex="0">
+          <p class="message">Hi there. How can we help with your workspace?</p>
+          <div class="choices" id="choices">
+            <button type="button" class="choice" data-message="I need help signing in.">Sign-in help</button>
+            <button type="button" class="choice" data-message="Where can I find my invoice?">Find an invoice</button>
+          </div>
+        </div>
+        <form id="chat-form" autocomplete="off">
+          <input id="message" aria-label="Your message" placeholder="Write a message…" required maxlength="1000">
+          <button class="send" type="submit">Send</button>
+        </form>
+      </section>
+    </div>
+  </section>
+  <section class="shell topics" id="topics" aria-labelledby="topics-title">
+    <h2 id="topics-title">What do you need help with?</h2>
+    <div class="cards">
+      <button class="card" type="button" data-message="I need help signing in."><strong>Account access</strong><span>Sign in, reset a password, or manage workspace access.</span></button>
+      <button class="card" type="button" data-message="Where can I find my invoice?"><strong>Billing and plans</strong><span>Find invoices and review your subscription.</span></button>
+      <button class="card" type="button" data-message="I need help troubleshooting an integration."><strong>Technical support</strong><span>Troubleshoot a workspace connection or integration.</span></button>
+    </div>
+  </section>
+</main>
+<footer><div class="shell">Northline Systems · Fictional enterprise demo</div></footer>
+<script>
+  const form = document.querySelector("#chat-form");
+  const input = document.querySelector("#message");
+  const messages = document.querySelector("#messages");
+  const choices = document.querySelector("#choices");
+  const mode = document.querySelector("#mode");
+  const topicButtons = [...document.querySelectorAll("[data-message]")];
+  const controls = [input, form.querySelector("button"), ...topicButtons];
+  let serverChat = false;
+  let session;
+  let cursor = 0;
+  let sending = false;
+
+  function append(message, mine = false) {
+    const bubble = document.createElement("p");
+    bubble.className = mine ? "message mine" : "message";
+    bubble.textContent = message;
+    messages.append(bubble);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function demoReply(message) {
+    if (/sign.?in|password|login|access/i.test(message)) {
+      return "If you use company single sign-on, open Northline from your company’s app portal. For a Northline password, select “Forgot password” on the sign-in screen.";
+    }
+    if (/bill|invoice|plan|subscription/i.test(message)) {
+      return "A workspace owner can find invoices and plan details in Settings → Billing.";
+    }
+    if (/integration|connect|technical|error/i.test(message)) {
+      return "Open Settings → Integrations and check the connection status. Which integration is affected, and what error do you see?";
+    }
+    return "I can help with account access, invoices, and integrations. Which area is affected?";
+  }
+
+  async function request(path, options = {}) {
+    const response = await fetch(path, { ...options, signal: AbortSignal.timeout(6500), cache: "no-store" });
+    if (!response.ok) {
+      const error = new Error("Chat request failed");
+      error.status = response.status;
+      throw error;
+    }
+    return response.json();
+  }
+
+  function endSession() {
+    session = undefined;
+    cursor = 0;
+    mode.textContent = "Ready for a new conversation";
+  }
+
+  async function receive(activeSession) {
+    try {
+      const data = await request("/api/chat/" + activeSession + "?after=" + cursor);
+      if (session !== activeSession) return;
+      for (const entry of data.messages) {
+        append(entry.text);
+        cursor = entry.sequence;
+      }
+      mode.textContent = "Connected chat";
+    } catch (error) {
+      if (session !== activeSession) return;
+      if (error.status === 404) {
+        endSession();
+      } else if (!sending) {
+        mode.textContent = "Reconnecting…";
+      }
+    } finally {
+      if (session === activeSession) setTimeout(() => receive(activeSession), 1800);
+    }
+  }
+
+  const ready = (async () => {
+    if (!/^https?:$/.test(location.protocol)) return;
+    try {
+      serverChat = (await request("/api/config")).serverChat === true;
+      if (serverChat) mode.textContent = "Connected chat";
+    } catch {
+      // Static hosting and direct file access both support the demo assistant.
+    }
+  })();
+
+  async function send(text) {
+    if (!text || sending) return;
+    sending = true;
+    controls.forEach(control => { control.disabled = true; });
+    try {
+      await ready;
+      if (serverChat) {
+        mode.textContent = "Sending…";
+        const data = await request("/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ session, text })
+        });
+        append(text, true);
+        choices.remove();
+        input.value = "";
+        mode.textContent = "Connected chat";
+        if (session !== data.session) {
+          session = data.session;
+          receive(session);
+        }
+      } else {
+        append(text, true);
+        choices.remove();
+        input.value = "";
+        append(demoReply(text));
+      }
+    } catch (error) {
+      input.value = text;
+      append("Your message could not be confirmed. Please try again.");
+      if (error.status === 404) endSession();
+      else mode.textContent = "Delivery unconfirmed";
+    } finally {
+      sending = false;
+      controls.forEach(control => { control.disabled = false; });
+      input.focus();
+    }
+  }
+
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+    send(input.value.trim());
+  });
+  topicButtons.forEach(button => button.addEventListener("click", () => send(button.dataset.message)));
+</script>
+</body>
+</html>
