@@ -85,7 +85,7 @@ async function postQuestion(message, messageId) {
   if (!raw.trim()) return 'Your question was received by the connected service. No reply was included in its response.';
   if ((response.headers.get('content-type') || '').includes('json')) {
    let data; try { data = JSON.parse(raw); } catch { throw new Error('invalid-response'); }
-   const reply = data.reply ?? data.answer ?? data.message;
+   const reply = data.output ?? data.reply ?? data.answer ?? data.message;
    if (typeof reply !== 'string' || !reply.trim()) return 'Your question was received by the connected service. No text reply was included in its response.';
    return reply.slice(0,10000);
   }
